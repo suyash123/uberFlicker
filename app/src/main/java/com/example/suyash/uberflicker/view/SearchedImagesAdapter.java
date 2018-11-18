@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.suyash.uberflicker.R;
+import com.example.suyash.uberflicker.core.ImageLoader;
 import com.example.suyash.uberflicker.model.FlickrImage;
 
 import java.util.List;
@@ -17,11 +18,13 @@ public class SearchedImagesAdapter extends RecyclerView.Adapter<SearchedImagesAd
 
     private List<FlickrImage> flickrImageList;
     private Context context;
+    private ImageLoader imageLoader;
 
     public SearchedImagesAdapter(Context context, List<FlickrImage> flickrImageList) {
         super();
         this.flickrImageList = flickrImageList;
         this.context = context;
+        imageLoader = ImageLoader.getInstance();
     }
 
     @Override
@@ -60,6 +63,7 @@ public class SearchedImagesAdapter extends RecyclerView.Adapter<SearchedImagesAd
 
             if (flickrImage.getImageURL() != null) {
                 imageView.setImageDrawable(null);
+                imageLoader.setDrawable(imageView, flickrImage);
             }
             titleView.setText(flickrImage.getTitle());
         }

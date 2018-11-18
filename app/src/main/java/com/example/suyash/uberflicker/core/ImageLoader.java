@@ -38,6 +38,7 @@ public class ImageLoader implements ILoadImage{
              imageView.setImageDrawable(bitmapDrawable);
              return;
         }
+        imageView.setImageResource(R.mipmap.ic_launcher);
         LoadPhotoTask loadPhotoTask = new LoadPhotoTask(this, flickrImage, imageView);
         HttpManager.getInstance().executeTask(loadPhotoTask);
     }
