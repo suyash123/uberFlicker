@@ -3,12 +3,12 @@ package com.example.suyash.uberflicker.model;
 import java.io.Serializable;
 import java.util.List;
 
-public class SearchedImage implements Serializable {
+public class SearchedImages implements Serializable {
 
     private int pages;
     private List<FlickrImage> flickrImageList;
 
-    public SearchedImage(int pages, List<FlickrImage> flickrImageList) {
+    public SearchedImages(int pages, List<FlickrImage> flickrImageList) {
         this.pages = pages;
         this.flickrImageList = flickrImageList;
     }
